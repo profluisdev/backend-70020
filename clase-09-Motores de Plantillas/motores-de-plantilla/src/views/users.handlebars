@@ -1,0 +1,12 @@
+
+<h2>Lista usuarios</h2>
+
+{{!-- Foreach de usuarios --}}
+
+{{#each users}}
+  <div>
+      <p>--------------------------------</p>
+      <p>Nombre: {{this.name}} </p>
+      <p>Apellido: {{this.lastName}} </p>
+  </div>
+{{/each}}
