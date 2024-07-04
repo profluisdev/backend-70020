@@ -1,0 +1,42 @@
+
+// Creamos la base de datos 
+use("baseCRUD") // Seleccionamos la base de datos que vamos a usar y si no existe la crea.
+
+// Creamos una colección 
+// db.createCollection("mascotas") 
+
+// Insertamos un documento
+// db.mascotas.insertOne( { nombre: "Ayudante de Santa", especie: "Perro", edad: 1 } )
+
+// Insertamos varios documentos en un solo paso
+
+// db.mascotas.insertMany(
+// [
+//   {
+//     nombre: "Firulais",
+//     especie: "Perro",
+//     edad: 3,
+//   },
+//   {
+//     nombre: "Piolin",
+//     especie: "Pajaro",
+//     edad: 3,
+//   },
+//   {
+//     nombre: "Garfield",
+//     especie: "Gato",
+//     edad: 3,
+//   }
+// ]
+// )
+
+// Buscar todos los documentos de la colección 
+
+// db.mascotas.find()
+
+// Buscamos un documento por un parámetro especifico 
+
+// db.mascotas.find({especie: "Perro" })
+
+// Obtener la cantidad de documentos de una colección
+db.mascotas.count()

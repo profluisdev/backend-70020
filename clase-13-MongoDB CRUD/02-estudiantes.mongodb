@@ -1,0 +1,122 @@
+
+use("colegio")
+
+db.createCollection("estudiantes")
+
+// db.estudiantes.insertMany(
+//   [
+//     {
+//       nombre: "Juan",
+//       apellido: "Perez",
+//       curso: "1A",
+//       edad: 10,
+//       correo: "jp@gmail.com",
+//       sexo: "M"
+//     },
+//     {
+//       nombre: "Maria",
+//       apellido: "Lopez",
+//       curso: "1A",
+//       edad: 9,
+//       correo: "ml@gmail.com",
+//       sexo: "F"
+//     },
+//     {
+//       nombre: "Pedro",
+//       apellido: "Gomez",
+//       curso: "1B",
+//       edad: 11,
+//       correo: "pg@gmail.com",
+//       sexo: "M"
+//     },
+//     {
+//       nombre: "Ana",
+//       apellido: "Martinez",
+//       curso: "1B",
+//       edad: 10,
+//       correo: "am@gmail.com",
+//       sexo: "F"
+//     },
+//     {
+//       nombre: "Luis",
+//       apellido: "Rodriguez",
+//       curso: "1A",
+//       edad: 10,
+//       correo: "lr@gmail.com",
+//       sexo: "M"
+//     },
+//   ]
+// )
+
+// db.estudiantes.insertOne(
+//   {
+//     nombre: "Juan",
+//     apellido: "Perez",
+//     curso: "1B"
+//   }
+// )
+
+// Realizar una búsqueda para obtener a todos los estudiantes.
+
+// db.estudiantes.find()
+
+// Realizar una búsqueda para obtener a todos los estudiantes de sexo M
+
+// db.estudiantes.find({sexo: "M"})
+
+// Realizar una búsqueda para obtener a todos los estudiantes de sexo F
+
+// db.estudiantes.find({sexo: "F"})
+
+// Realizar un conteo para obtener el número de documentos totales.
+
+// db.estudiantes.count()
+
+// Realizar un conteo para obtener el número de documentos totales del sexo F.
+
+// db.estudiantes.count({sexo: "F"})
+
+// Realizar un conteo para obtener el número de documentos totales del sexo M y un curso.
+
+// db.estudiantes.count({sexo: "M", curso: "1A"}) 
+
+// Proyecciones
+
+// db.estudiantes.find({}, {nombre: 1})
+// db.estudiantes.find({}, {nombre: 1, curso: 1})
+
+// Sort
+
+// db.estudiantes.find().sort({ nombre: 1 })
+// db.estudiantes.find().sort({ nombre: -1 })
+
+// Skip
+
+// db.estudiantes.find().sort({nombre: 1}).skip(3)
+
+// Limit
+// db.estudiantes.find().sort({nombre: 1}).limit(3)
+
+
+// Agregamos 5 alumnos a la colección y uno solo con nombre
+
+// db.estudiantes.insertMany(
+//   [
+//     { nombre: "Diego Hernan", apellido: "Manes", curso: "3A", sexo: "M", edad: 15 },
+//     { nombre: "Mariana Soledad", apellido: "Gomez", curso: "3A", sexo: "F", edad: 15 },
+//     { nombre: "Lucas", apellido: "Perez", curso: "3A", sexo: "M", edad: 15 },
+//     { nombre: "Sofia Maria", apellido: "Gonzalez", curso: "3A", sexo: "F", edad: 15 },
+//     { nombre: "Juan Jorge", apellido: "Garcia", curso: "3A", sexo: "M", edad: 15 },
+//     { nombre: "Domingo" },
+//   ]
+// )
+
+
+// db.estudiantes.find({}, { nombre: 1, curso: 1, sexo: 1 })
+// db.estudiantes.find({}, { nombre: 1, curso: 1, sexo: 1 }).sort({nombre: 1})
+// db.estudiantes.find({}, { nombre: 1, curso: 1, sexo: 1 }).sort({nombre: 1}).skip(5)
+// db.estudiantes.find({}, { nombre: 1, curso: 1, sexo: 1 }).sort({nombre: 1}).limit(3)
+// db.estudiantes.find({curso: "1B"}, { nombre: 1, curso: 1, sexo: 1 }).sort({nombre: 1}).limit(3)
+
+// db.estudiantes.updateOne({_id: ObjectId("6686b4fb109c819dc39600a6")}, {$set: {apellido: "Salvucci"}})
+db.estudiantes.deleteOne({_id: ObjectId("6686b4fb109c819dc39600a6")})
